@@ -1,2 +1,6 @@
 # ICS4U0-Answers
-My code I have done for ICS4U (Grade 12 Computer Science)
+Answers to the lessons in ICS4U0 at my school.
+
+**I heavily recommend you complete the actual lessons on your own, before looking at how I did mine. This is just for comparisons sake, do not use this in your assignments.**
+
+Other than school work, you may use this however you like.
