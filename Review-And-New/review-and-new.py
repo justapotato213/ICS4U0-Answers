@@ -1,3 +1,12 @@
+#-----------------------------------------------------------------------------
+# Name:        Ethical Programming RPG
+# Purpose:     Small RPG that teaches the user about ethical computing.
+#
+# Author:      Tony Lin
+# Created:     19-Feb-2023
+# Updated:     19-Feb-2023
+#-----------------------------------------------------------------------------
+
 # Simple RPG that teaches the basics of ethics in computing
 # e.g. don't look through someones computer, don't cyberbully, 
 # don't hack into things etc. 
