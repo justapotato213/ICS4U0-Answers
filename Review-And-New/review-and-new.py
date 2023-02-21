@@ -142,13 +142,12 @@ elif number == 3:
 
 endTime = time.time()
 
-#totalTime = endTime - startTime
 # convert into hours, minutes, seconds
 totalTime = endTime - startTime
 
-hours = int(totalTime // 3600)
+hours = totalTime // 3600
 totalTime -= (hours * 3600)
-minutes = int(totalTime // 60)
+minutes = totalTime // 60
 totalTime -= (minutes * 60)
 seconds = int(totalTime % 60)
 
