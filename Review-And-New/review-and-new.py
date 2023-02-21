@@ -13,12 +13,11 @@
 # stuff to store your decisions throughout the game, and their affects
 # e.g. reputation, etc. 
 
-import random
+import random, time
 
 def decision(prompt: str, options: list, consequences: list):
     '''
     This function automatically handles decisions, as well as its consequences.
-
     It automatically outputs the prompt, the options they have, as well as handles the input of the user and the exact consequences each choice has.
     
     Parameters
@@ -30,7 +29,6 @@ def decision(prompt: str, options: list, consequences: list):
     consequences: list
         List of lists containing the console output of the decision, the variable the decision affects, and how much it affects it by.
     ----------
-
     Returns
     ----------
     None
@@ -77,6 +75,9 @@ def decision(prompt: str, options: list, consequences: list):
 # statistics setup
 reputation = 100
 money = 50
+
+# time setup
+startTime = time.time()
 
 # simple starting screen
 print("Hello, and welcome to this small RPG (Role Playing Game) about computing!")
@@ -131,10 +132,25 @@ number = number // 13
 number = number % 4
 # actual quiz
 if number == 0:
-    decision(questions[number], ["Yes", "No"], [["Correct! You shouldn't snoop through someones computer as it could include private files that they don't want you to see, and so you are violating their privacy which is ethically bad.", "rep", 0]["Wrong answer! You shouldn't snoop through someones computer as it could include private files that they don't want you to see, and so you are violating their privacy which is ethically bad.", "rep", 0]])
+    decision(questions[number], ["Yes", "No"], [["Correct! You shouldn't snoop through someones computer as it could include private files that they don't want you to see, and so you are violating their privacy which is ethically bad.", "rep", 0], ["Wrong answer! You shouldn't snoop through someones computer as it could include private files that they don't want you to see, and so you are violating their privacy which is ethically bad.", "rep", 0]])
 elif number == 1:   
     decision(questions[number], ["Yes", "No"], [["Correct! Even if you aren't stealing something physical, computers are not to be used for stealing, and so doing this is still malicous and therefore ethically bad.", "rep", 0], ["Wrong Answer! Even if you aren't stealing something physical, computers are not to be used for stealing, and so doing this is still malicous and therefore ethically bad.", "rep", 0]])
 elif number == 2:
     decision(questions[number], ["Trick question! You shouldn't report them so you can abuse the flaw!", "You should report them so that you can make money.", "You should report them so that they can stop any malicous use of this flaw."], [["Wrong Answer! You should report them so that they can stop any malicous use of this flaw.", "rep", 0], ["Wrong Answer! You should report them so that they can stop any malicous use of this flaw.", "rep", 0], ["Correct! You should report them so that they can stop any malicous use of this flaw.", "rep", 0]])
 elif number == 3:
     decision(questions[number], ["Yes", "No"], [["Correct! Computers should never be used to harm anyone, even if you are not physically harming them in person.", "rep", 0], ["Wrong Answer! Computers should never be used to harm anyone, even if you are not physically harming them in person.", "rep", 0]])
+
+endTime = time.time()
+
+#totalTime = endTime - startTime
+# convert into hours, minutes, seconds
+totalTime = endTime - startTime
+
+hours = int(totalTime // 3600)
+totalTime -= (hours * 3600)
+minutes = int(totalTime // 60)
+totalTime -= (minutes * 60)
+seconds = int(totalTime % 60)
+
+print(f"It took you {hours}h {minutes}m and {seconds}s to complete this game!")
+
