@@ -38,7 +38,6 @@ def decision(prompt: str, options: list, consequences: list):
     # setup
     global reputation
     global money
-    global decisions
 
     # formatting
     print("----------------------------------------")
@@ -120,7 +119,8 @@ else:
     print("You made all the wrong choices, and should really avoid doing this in real life, as otherwise you are abusing computers, and could possibly get into trouble.")
 
 print("----------------------------------------")
-# quiz time or smth
+
+# quiz
 # 4 questions based on the thing, choose one randomly 
 print("Thats the game finished, now for a quiz!")
 questions = ["Should you snoop through someones computer?", "Is stealing an idea from someone online still ethically bad?", "Why should you report flaws to people who make software?", "If you use a computer and only hurt them online, is it still a non-ethical use of a computer?"]
