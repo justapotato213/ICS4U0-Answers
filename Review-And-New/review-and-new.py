@@ -4,7 +4,7 @@
 #
 # Author:      Tony Lin
 # Created:     19-Feb-2023
-# Updated:     19-Feb-2023
+# Updated:     22-Feb-2023
 #-----------------------------------------------------------------------------
 
 # Simple RPG that teaches the basics of ethics in computing
