@@ -130,8 +130,8 @@ questions = ["Should you snoop through someones computer?", "Is stealing an idea
 number = random.randint(0, 100)
 # int division to get more random number
 number = number // 13
-# modulo to get a correct index
-number = number % 4
+# modulo to get a correct index, also have to convert from float to int 
+number = int(number % 4)
 # actual quiz
 if number == 0:
     decision(questions[number], ["Yes", "No"], [["Correct! You shouldn't snoop through someones computer as it could include private files that they don't want you to see, and so you are violating their privacy which is ethically bad.", "rep", 0], ["Wrong answer! You shouldn't snoop through someones computer as it could include private files that they don't want you to see, and so you are violating their privacy which is ethically bad.", "rep", 0]])
@@ -151,6 +151,7 @@ hours = totalTime // 3600
 totalTime -= (hours * 3600)
 minutes = totalTime // 60
 totalTime -= (minutes * 60)
+# have to convert from float to int
 seconds = int(totalTime % 60)
 
 print(f"It took you {hours}h {minutes}m and {seconds}s to complete this game!")
