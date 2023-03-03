@@ -155,4 +155,3 @@ totalTime -= (minutes * 60)
 seconds = int(totalTime % 60)
 
 print(f"It took you {hours}h {minutes}m and {seconds}s to complete this game!")
-
