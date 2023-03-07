@@ -1,6 +1,8 @@
 using System.Text.Json;
+using FoodNS;
+using ColourNS;
 
-namespace catObject
+namespace CatNS
 {
     /// <summary>
     /// A object that holds the characteristics of a cat, and some functions of a cat
@@ -15,7 +17,7 @@ namespace catObject
         /// <summary> 
         /// Stores the cats colour as a string
         /// </summary> 
-        public string colour { get; set; }
+        public Colour colour { get; set; }
 
         /// <summary>
         /// Stores the cats breed as a string
@@ -59,7 +61,7 @@ namespace catObject
         /// <param name="colour"> Initial colour of the cat </param>
         /// <param name="breed"> Breed of the cat </param>
         /// <param name="sex"> Sex of the cat </param>
-        public Cat(string name, string colour, string breed, string sex)
+        public Cat(string name, Colour colour, string breed, string sex)
         {
             this.name = name;
             this.colour = colour;
@@ -84,7 +86,7 @@ namespace catObject
         /// <param name="speed"> Initial speed of the cat </param>
         /// <param name="length"> Initial length of the cat </param>
         /// <param name="age"> Initial age of the cat </param>
-        public Cat(string name, string colour, string breed, string sex, double weight, double height, double speed, double length, int age)
+        public Cat(string name, Colour colour, string breed, string sex, double weight, double height, double speed, double length, int age)
         {
             this.name = name;
             this.colour = colour;
@@ -103,17 +105,21 @@ namespace catObject
         /// <returns>The description of the cat.</returns>
         public string description()
         {
-            return $"{name} is a {breed} cat, who is {age} years old. They can run at {speed}km/h, weights {weight}kg, is {length}cm long and is {height}cm tall";
+            return $"{this.name} is a {this.breed} cat, who is {this.age} years old. They can run at {Math.Round(this.speed)}km/h, weighs {Math.Round(this.weight)}kg, is {Math.Round(this.length)}cm long and is {Math.Round(this.height)}cm tall. They have {this.colour.description()} fur.";
         }
 
         /// <summary>
         /// Simulates a cat eating, increasing weight, length and height, but decreasing speed
         /// </summary>
-        public void eat(){
-            this.weight += 0.05;
-            this.speed -= 0.05;
-            this.length += 0.05;
-            this.height += 0.05;
+        /// <param name="food">Food to feed to the cat</param>
+        public void eat(Food food){
+            this.weight += food.weightIncrease();
+            this.length += food.lengthIncrease();
+            this.height += food.heightIncrease();
+
+            // recalculate speed based on new weight, length and height
+            this.speed = (this.height * this.length * 0.05) - weight;
+
         }
         
         /// <summary>

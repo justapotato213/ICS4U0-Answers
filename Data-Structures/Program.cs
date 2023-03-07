@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using CatNS;
+using FoodNS;
+using ColourNS;
+using PersonNS;
+
 
 namespace catSimulator
 {
@@ -7,14 +12,19 @@ namespace catSimulator
     {
         static void Main(string[] args)
         {
-            List<catObject.Cat> cats = new List<catObject.Cat>();
+            List<Cat> cats = new List<Cat>();
 
-            catObject.Cat cat = new catObject.Cat("Cat Name", "Orange", "Calico", "Male", 5, 20, 30, 10, 1);
-            Console.WriteLine(cat.description());
+            Colour colour = new Colour("spotted", "yellow", "black");
+            Cat cat = new Cat("Bagles", colour, "Calico", "Male", 5, 20, 14, 20, 5);
 
             cats.Add(cat);
 
-            
+            Person person = new Person("John Smith", cats, 900);
+
+            Console.WriteLine(person.cats[0].description());
+
+            Food bagel = new Food(150, 20, 9);
+            person.cats[0].eat(bagel);
 
         }
     }
