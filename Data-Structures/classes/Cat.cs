@@ -1,6 +1,6 @@
 using System.Text.Json;
-using FoodNS;
 using ColourNS;
+using FoodNS;
 
 namespace CatNS
 {
@@ -22,7 +22,7 @@ namespace CatNS
         /// <summary>
         /// Stores the cats breed as a string
         /// </summary>
-        public string breed { get;  private set; }
+        public string breed { get; private set; }
 
         /// <summary>
         /// Stores the cats sex as a string
@@ -67,11 +67,11 @@ namespace CatNS
             this.colour = colour;
             this.breed = breed;
             this.sex = sex;
-            this.weight = 4.5;
-            this.height = 24.00;
-            this.speed = 48.00;
-            this.length = 46;
-            this.age = 3;
+            weight = 4.5;
+            height = 24.00;
+            speed = 48.00;
+            length = 46;
+            age = 3;
         }
 
         /// <summary>
@@ -86,7 +86,8 @@ namespace CatNS
         /// <param name="speed"> Initial speed of the cat </param>
         /// <param name="length"> Initial length of the cat </param>
         /// <param name="age"> Initial age of the cat </param>
-        public Cat(string name, Colour colour, string breed, string sex, double weight, double height, double speed, double length, int age)
+        public Cat(string name, Colour colour, string breed, string sex, double weight, double height, double speed,
+            double length, int age)
         {
             this.name = name;
             this.colour = colour;
@@ -103,48 +104,51 @@ namespace CatNS
         /// Returns a description of a cat in a string format.
         /// </summary>
         /// <returns>The description of the cat.</returns>
-        public string description()
+        public string Description()
         {
-            return $"{this.name} is a {this.breed} cat, who is {this.age} years old. They can run at {Math.Round(this.speed)}km/h, weighs {Math.Round(this.weight)}kg, is {Math.Round(this.length)}cm long and is {Math.Round(this.height)}cm tall. They have {this.colour.description()} fur.";
+            return
+                $"{name} is a {breed} cat, who is {age} years old. They can run at {Math.Round(speed)}km/h, weighs {Math.Round(weight)}kg, is {Math.Round(length)}cm long and is {Math.Round(height)}cm tall. They have {colour.Description()} fur.";
         }
 
         /// <summary>
         /// Simulates a cat eating, increasing weight, length and height, but decreasing speed
         /// </summary>
         /// <param name="food">Food to feed to the cat</param>
-        public void eat(Food food){
-            this.weight += food.weightIncrease();
-            this.length += food.lengthIncrease();
-            this.height += food.heightIncrease();
+        public void Eat(Food food)
+        {
+            weight += food.WeightIncrease();
+            length += food.LengthIncrease();
+            height += food.HeightIncrease();
 
             // recalculate speed based on new weight, length and height
-            this.speed = (this.height * this.length * 0.05) - weight;
-
+            speed = (height * length * 0.05) - weight;
         }
-        
+
         /// <summary>
         /// Simulates a cat running, decreasing its weight, but increasing speed, length, and height
         /// </summary>
-        public void run(){
-            this.weight -= 0.05;
-            this.speed += 0.05;
-            this.length += 0.05;
-            this.height += 0.05;
+        public void Run()
+        {
+            weight -= 0.05;
+            speed += 0.05;
+            length += 0.05;
+            height += 0.05;
         }
-        
+
         /// <summary>
         /// Increase the age by 1
         /// </summary>
-        public void ageUp()
+        public void AgeUp()
         {
-            this.age += 1;
+            age += 1;
         }
 
         /// <summary>
         /// Returns the cats information stored as a JSON. 
         /// </summary>
         /// <returns>The JSON in a string format</returns>
-        public string toJson(){
+        public string ToJson()
+        {
             return JsonSerializer.Serialize(this);
         }
     }

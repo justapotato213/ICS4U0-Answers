@@ -6,7 +6,7 @@ using ColourNS;
 using PersonNS;
 
 
-namespace catSimulator
+namespace CatSim
 {
     class MainClass
     {
@@ -21,12 +21,10 @@ namespace catSimulator
 
             Person person = new Person("John Smith", cats, 900);
 
-            Console.WriteLine(person.cats[0].description());
+            Console.WriteLine(person.cats[0].Description());
 
             Food bagel = new Food(150, 20, 9);
-            person.cats[0].eat(bagel);
-
+            person.cats[0].Eat(bagel);
         }
     }
-    
 }

@@ -20,7 +20,6 @@ namespace ColourNS
         /// </summary>
         public string secondary { get; set; }
 
-
         /// <summary>
         /// Class contructor
         /// </summary>
@@ -38,9 +37,9 @@ namespace ColourNS
         /// Gives a description of the colour in a string format
         /// </summary>
         /// <returns>A string containing the description</returns>
-        public string description()
+        public string Description()
         {
-            return $"{this.primary}-{this.secondary} {this.pattern}";
+            return $"{primary}-{secondary} {pattern}";
         }
     }
 }

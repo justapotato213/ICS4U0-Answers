@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\data-structures\\Data-Structures.csproj": {}
+    "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\Data-Structures.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\data-structures\\Data-Structures.csproj": {
+    "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\Data-Structures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\data-structures\\Data-Structures.csproj",
+        "projectUniqueName": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\Data-Structures.csproj",
         "projectName": "Data-Structures",
-        "projectPath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\data-structures\\Data-Structures.csproj",
+        "projectPath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\Data-Structures.csproj",
         "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\data-structures\\obj\\",
+        "outputPath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -39,7 +39,7 @@ namespace FoodNS
         /// Increases the weight based on the food values
         /// </summary>
         /// <returns>Weight increase in kilograms</returns>
-        public double weightIncrease()
+        public double WeightIncrease()
         {
             return (nutrients / caloricValue) * fat;
         }
@@ -48,7 +48,7 @@ namespace FoodNS
         /// Increases the length based on food value
         /// </summary>
         /// <returns>Length increase in cm</returns>
-        public double lengthIncrease()
+        public double LengthIncrease()
         {
             return (nutrients / caloricValue);
         }
@@ -57,7 +57,7 @@ namespace FoodNS
         /// Increases the height of the cat based on food value
         /// </summary>
         /// <returns>Height increase in cm</returns>
-        public double heightIncrease()
+        public double HeightIncrease()
         {
             return (nutrients / caloricValue);
         }
@@ -66,7 +66,7 @@ namespace FoodNS
         /// Returns the cats information stored as a JSON. 
         /// </summary>
         /// <returns>The JSON in a string format</returns>
-        public string toJson()
+        public string ToJson()
         {
             return JsonSerializer.Serialize(this);
         }
