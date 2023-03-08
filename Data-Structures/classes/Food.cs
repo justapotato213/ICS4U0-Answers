@@ -8,17 +8,22 @@ namespace FoodNS
     public class Food
     {
         /// <summary>
-        /// Caloric value of the food
+        /// The name of the food as a string
+        /// </summary>
+        public string name { get; set; }
+
+        /// <summary>
+        /// Caloric value of the food as a double
         /// </summary>
         public double caloricValue { get; set; }
 
         /// <summary>
-        /// Nutritional value of the food
+        /// Nutritional value of the food as a double
         /// </summary>
         public double nutrients { get; set; }
 
         /// <summary>
-        /// Fat value of the food
+        /// Fat value of the food as a double
         /// </summary>
         public double fat { get; set; }
 
@@ -26,10 +31,12 @@ namespace FoodNS
         /// Class constructor
         /// </summary>
         /// <param name="caloricValue">Caloric value of food</param>
-        /// <param name="nutrients">Nutrional value of food</param>
+        /// <param name="nutrients">Nutritional  value of food</param>
         /// <param name="fat">Fat value of the food</param>
-        public Food(int caloricValue, int nutrients, int fat)
+        /// <param name="name">Name of the food</param>
+        public Food(string name,  int caloricValue, int nutrients, int fat)
         {
+            this.name = name;
             this.caloricValue = caloricValue;
             this.nutrients = nutrients;
             this.fat = fat;
@@ -63,12 +70,22 @@ namespace FoodNS
         }
 
         /// <summary>
-        /// Returns the cats information stored as a JSON. 
+        /// Returns the food information stored as a JSON.
         /// </summary>
         /// <returns>The JSON in a string format</returns>
         public string ToJson()
         {
             return JsonSerializer.Serialize(this);
+        }
+
+        /// <summary>
+        /// Saves the food information in json, to the "/data/food" folder
+        ///</summary>
+        public void SaveFood()
+        {
+            string fileName = @$".\data\food\{name}.json";
+            string jsonString = ToJson();
+            File.WriteAllText(fileName, jsonString);
         }
     }
 }

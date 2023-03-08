@@ -1,3 +1,4 @@
+using System.Text.Json;
 using CatNS;
 
 namespace PersonNS
@@ -41,6 +42,25 @@ namespace PersonNS
             this.name = name;
             this.cats = cats;
             this.money = money;
+        }
+
+        /// <summary>
+        /// Returns person information in a JSON
+        /// </summary>
+        /// <returns>Person information in JSON, as a string</returns>
+        public string ToJson()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+
+        /// <summary>
+        /// Saves the person information in json, to the "/data/people" folder
+        ///</summary>
+        public void SavePerson()
+        {
+            string fileName = @$".\data\people\{name}.json";
+            string jsonString = ToJson();
+            File.WriteAllText(fileName, jsonString);
         }
     }
 }

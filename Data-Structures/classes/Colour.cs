@@ -1,3 +1,5 @@
+using System.Text.Json;
+
 namespace ColourNS
 {
     /// <summary>
@@ -40,6 +42,25 @@ namespace ColourNS
         public string Description()
         {
             return $"{primary}-{secondary} {pattern}";
+        }
+
+        /// <summary>
+        /// Returns the cats information stored as a JSON.
+        /// </summary>
+        /// <returns>The cats information stored as a JSON, in a string.</returns>
+        public string ToJson()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+
+        /// <summary>
+        /// Saves the colour information as a JSON
+        /// </summary>
+        public void SaveColour()
+        {
+            string fileName = @$".\data\colours\{primary}-{secondary}-{pattern}.json";
+            string jsonString = ToJson();
+            File.WriteAllText(fileName, jsonString);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace CatNS
     /// <summary>
     /// A object that holds the characteristics of a cat, and some functions of a cat
     /// </summary>
-    public class Cat
+    public class Cat 
     {
         /// <summary>
         /// Stores the cats name as a string
@@ -150,6 +150,16 @@ namespace CatNS
         public string ToJson()
         {
             return JsonSerializer.Serialize(this);
+        }
+
+        /// <summary>
+        /// Saves the cats information in json, to the "/data/cats" folder
+        ///</summary>
+        public void Save()
+        {
+            string fileName = @$".\data\cats\{name}.json";
+            string jsonString = ToJson();
+            File.WriteAllText(fileName, jsonString);
         }
     }
 }
