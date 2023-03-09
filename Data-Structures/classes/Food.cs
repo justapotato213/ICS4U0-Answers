@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace FoodNS
+namespace Data_Structures.classes
 {
     /// <summary>
     /// Object that contains values about food and its stats

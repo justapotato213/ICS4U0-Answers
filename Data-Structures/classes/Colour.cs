@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace ColourNS
+namespace Data_Structures.classes
 {
     /// <summary>
     /// Stores colour information (NON RGB)
@@ -41,7 +41,14 @@ namespace ColourNS
         /// <returns>A string containing the description</returns>
         public string Description()
         {
-            return $"{primary}-{secondary} {pattern}";
+            if (primary != secondary)
+            {
+                return $"{primary}-{secondary} {pattern}";
+            }
+            else
+            {
+                return $"{primary}";
+            }
         }
 
         /// <summary>

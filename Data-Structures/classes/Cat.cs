@@ -1,8 +1,8 @@
 using System.Text.Json;
-using ColourNS;
-using FoodNS;
+using System.Text.Json.Serialization;
 
-namespace CatNS
+
+namespace Data_Structures.classes
 {
     /// <summary>
     /// A object that holds the characteristics of a cat, and some functions of a cat
@@ -54,6 +54,8 @@ namespace CatNS
         /// </summary>
         public int age { get; set; }
 
+
+
         /// <summary> 
         /// The class contructor 
         /// </summary>
@@ -86,6 +88,7 @@ namespace CatNS
         /// <param name="speed"> Initial speed of the cat </param>
         /// <param name="length"> Initial length of the cat </param>
         /// <param name="age"> Initial age of the cat </param>
+        [JsonConstructor]
         public Cat(string name, Colour colour, string breed, string sex, double weight, double height, double speed,
             double length, int age)
         {
@@ -155,7 +158,7 @@ namespace CatNS
         /// <summary>
         /// Saves the cats information in json, to the "/data/cats" folder
         ///</summary>
-        public void Save()
+        public void SaveCat()
         {
             string fileName = @$".\data\cats\{name}.json";
             string jsonString = ToJson();

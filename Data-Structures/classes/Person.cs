@@ -1,7 +1,6 @@
 using System.Text.Json;
-using CatNS;
 
-namespace PersonNS
+namespace Data_Structures.classes
 {
     class Person
     {
