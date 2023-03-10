@@ -5,7 +5,7 @@ namespace Data_Structures;
 
 internal class MainClass
 {
-    private static void Main(string[] args)
+    private static void Main()
     {
         // setup variables
         var days = 0;
@@ -149,10 +149,12 @@ internal class MainClass
                     Console.WriteLine("Your cats get a good exercise.");
                     Console.WriteLine(
                         "On your run with your cats, you come across a stray cat. Do you want to keep it?");
-                    var keepDec = new List<string>();
-                    // ask yes or no
-                    keepDec.Add("Yes");
-                    keepDec.Add("No");
+                    var keepDec = new List<string>
+                    {
+                        // ask yes or no
+                        "Yes",
+                        "No"
+                    };
                     selection = helper.UserOptionsList(keepDec);
                     // add to player cats
                     if (selection == 1)
