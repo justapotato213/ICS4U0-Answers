@@ -69,8 +69,17 @@ internal class MainClass
         {
             case 1:
             {
-                // load the player data
-                player = JsonSerializer.Deserialize<Person>(File.ReadAllText(@".\data\people\player.json"))!;
+                try
+                {
+                    // load the player data
+                    player = JsonSerializer.Deserialize<Person>(File.ReadAllText(@".\data\people\player.json"))!;
+                }
+                catch (FileNotFoundException)
+                {
+                    // file doesn't exist, switch to the default case
+                    Console.WriteLine("Looks like you don't have a save already, making a new save!");
+                    goto default;
+                }
                 break;
             }
             default:
@@ -93,7 +102,8 @@ internal class MainClass
                 // get description of cats and add to an array
                 var descriptions = new List<string>();
                 foreach (var cat in cats) descriptions.Add(cat.Description());
-
+                
+                // get them to choose a cat
                 selection = helper.UserOptionsList(descriptions);
 
                 // Create the player object
@@ -186,3 +196,6 @@ internal class MainClass
         }
     }
 }
+
+// Citations: 
+// Microsoft, Redmond, WA, USA. C# documentation. (2023). Accessed: Mar. 10, 2023. [Online]. Available: https://learn.microsoft.com/en-us/dotnet/csharp/ 

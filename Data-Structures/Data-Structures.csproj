@@ -9,4 +9,8 @@
 
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="data\people" />
+    </ItemGroup>
+
 </Project>
