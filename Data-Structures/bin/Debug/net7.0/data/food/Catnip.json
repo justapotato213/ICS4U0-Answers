@@ -1,1 +1,6 @@
-{"name":"Catnip","caloricValue":50,"nutrients":0,"fat":0}
+{
+  "name": "Catnip",
+  "caloricValue": 50,
+  "nutrients": 0,
+  "fat": 0
+}

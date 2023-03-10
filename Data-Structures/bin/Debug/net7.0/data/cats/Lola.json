@@ -1,1 +1,15 @@
-{"name":"Lola","colour":{"pattern":"full","primary":"black","secondary":"black"},"breed":"Bombay","sex":"Female","weight":9.148275862068965,"height":24.202298850574714,"speed":46.76181635618973,"length":46.202298850574714,"age":3}
+{
+  "name": "Lola",
+  "colour": {
+    "pattern": "full",
+    "primary": "black",
+    "secondary": "black"
+  },
+  "breed": "Bombay",
+  "sex": "Female",
+  "weight": 9.148275862068965,
+  "height": 24.202298850574714,
+  "speed": 46.76181635618973,
+  "length": 46.202298850574714,
+  "age": 3
+}

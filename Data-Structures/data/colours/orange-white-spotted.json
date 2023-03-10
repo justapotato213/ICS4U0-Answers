@@ -1,1 +1,5 @@
-{"pattern":"spotted","primary":"orange","secondary":"white"}
+{
+  "pattern": "spotted",
+  "primary": "orange",
+  "secondary": "white"
+}

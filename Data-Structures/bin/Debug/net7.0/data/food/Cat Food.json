@@ -1,1 +1,6 @@
-{"name":"Cat Food","caloricValue":109,"nutrients":40,"fat":9}
+{
+  "name": "Cat Food",
+  "caloricValue": 109,
+  "nutrients": 40,
+  "fat": 9
+}

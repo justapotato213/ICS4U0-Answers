@@ -1,1 +1,6 @@
-{"name":"Donut","caloricValue":145,"nutrients":10,"fat":50}
+{
+  "name": "Donut",
+  "caloricValue": 145,
+  "nutrients": 10,
+  "fat": 50
+}

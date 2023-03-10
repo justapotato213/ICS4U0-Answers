@@ -1,1 +1,6 @@
-{"name":"Tuna","caloricValue":145,"nutrients":20,"fat":9}
+{
+  "name": "Tuna",
+  "caloricValue": 145,
+  "nutrients": 20,
+  "fat": 9
+}
