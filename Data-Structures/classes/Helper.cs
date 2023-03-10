@@ -1,6 +1,3 @@
-using System.ComponentModel.Design;
-using System.Runtime.InteropServices;
-
 namespace Data_Structures.classes;
 
 /// <summary>
@@ -29,6 +26,7 @@ public class Helper
             try
             {
                 selection = Convert.ToInt32(Console.ReadLine());
+                
                 // check if its a valid num
                 if (selection >= 1 && selection <= optionsList.Count)
                 {
@@ -44,6 +42,9 @@ public class Helper
             {
                 // tell user its wrong
                 Console.WriteLine("Please enter a valid option.");
+            }
+            catch (OverflowException) {
+                Console.WriteLine("Please enter a valid Option");  
             }
         }
 

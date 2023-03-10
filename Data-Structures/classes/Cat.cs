@@ -100,7 +100,12 @@ namespace Data_Structures.classes
                 weight = rnd.NextDouble() * 1 + 1;
                 height = rnd.NextDouble() * 5 + 2;
                 length = rnd.NextDouble() * 6 + 3;
-                speed = Math.Abs((height * length * 0.05) - weight);
+                this.speed = (height * length * 0.05) - weight;
+                // check if its a negative number, if it is set it to 1km/h
+                if (this.speed <= 0)
+                {
+                    this.speed = 1;
+                }
             }
             else
             {
@@ -108,7 +113,12 @@ namespace Data_Structures.classes
                 weight = rnd.NextDouble() * 3 + 2;
                 height = rnd.NextDouble() * 6 + 23;
                 length = rnd.NextDouble() * 10 + 40;
-                speed = (height * length * 0.05) - weight;
+                this.speed = (height * length * 0.05) - weight;
+                // check if its a negative number, if it is set it to 1km/h
+                if (this.speed <= 0)
+                {
+                    this.speed = 1;
+                }
             }
         }
 
@@ -127,7 +137,12 @@ namespace Data_Structures.classes
             this.sex = sex;
             weight = 4.5;
             height = 24.00;
-            speed = (height * length * 0.05) - weight;
+            this.speed = (height * length * 0.05) - weight;
+            // check if its a negative number, if it is set it to 1km/h
+            if (this.speed <= 0)
+            {
+                this.speed = 1;
+            }
             length = 46;
             age = 3;
         }
@@ -155,6 +170,11 @@ namespace Data_Structures.classes
             this.weight = weight;
             this.height = height;
             this.speed = (height * length * 0.05) - weight;
+            // check if its a negative number, if it is set it to 1km/h
+            if (this.speed <= 0)
+            {
+                this.speed = 1;
+            }
             this.length = length;
             this.age = age;
         }
@@ -181,6 +201,11 @@ namespace Data_Structures.classes
 
             // recalculate speed based on new weight, length and height
             speed = (height * length * 0.05) - weight;
+            // check if its a negative number, if it is set it to 1km/h
+            if (speed <= 0) 
+            {
+                speed = 1;
+            }
         }
 
         /// <summary>

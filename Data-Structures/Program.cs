@@ -12,7 +12,7 @@ namespace Data_Structures
             // setup variables
             int days = 0;
             var name = "";
-            var selection = 0;
+            int selection = 0;
             Helper helper = new Helper();
             Person player;
 
@@ -100,9 +100,11 @@ namespace Data_Structures
             while (!exit)
             {
                 // main menu
+                Console.WriteLine("===================================");
                 Console.WriteLine($"It is day {days}.");
                 Console.WriteLine("What would you like to do?");
                 int option = helper.UserOptionsList(dailyOptions);
+                Console.WriteLine("===================================");
                 switch (option)
                 {
                     case 1:
