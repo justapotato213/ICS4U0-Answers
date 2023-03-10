@@ -19,6 +19,8 @@ namespace Data_Structures.classes
         /// </summary>
         public decimal money { get; set; }
 
+        public List<Food> foods { get; set; }
+
         /// <summary>
         /// Class Constructor
         /// </summary>
@@ -28,6 +30,7 @@ namespace Data_Structures.classes
         {
             this.name = name;
             this.cats = cats;
+            this.foods = new List<Food>();
         }
 
         /// <summary>
@@ -41,6 +44,7 @@ namespace Data_Structures.classes
             this.name = name;
             this.cats = cats;
             this.money = money;
+            this.foods = new List<Food>();
         }
 
         /// <summary>

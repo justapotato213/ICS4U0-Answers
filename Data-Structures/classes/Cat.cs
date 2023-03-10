@@ -7,7 +7,7 @@ namespace Data_Structures.classes
     /// <summary>
     /// A object that holds the characteristics of a cat, and some functions of a cat
     /// </summary>
-    public class Cat 
+    public class Cat
     {
         /// <summary>
         /// Stores the cats name as a string
@@ -54,7 +54,63 @@ namespace Data_Structures.classes
         /// </summary>
         public int age { get; set; }
 
+        /// <summary>
+        /// The class constructor
+        /// </summary>
+        public Cat()
+        {
+            // random number generator
+            Random rnd = new Random();
 
+            string[] breeds =
+            {
+                "Siamese", "British Shorthair", "Maine Coon", "Persian", "Ragdoll", "American Shorthair",
+                "Scottish Fold"
+            };
+            string[] sexs = {"Male", "Female"};
+
+            List<Colour> colours = new List<Colour>();
+            // load colour information from file
+            foreach (string file in Directory.GetFiles(@".\data\colours"))
+            {
+                // load json from file
+                string jsonString = File.ReadAllText(@$".\{file}");
+                // convert to class, and then save to colours list
+                colours.Add(JsonSerializer.Deserialize<Colour>(jsonString)!);
+            }
+
+            // randomly generate stats for cat
+            // get a random name from the user
+            Console.WriteLine("What name would you like your cat?");
+            name = Console.ReadLine()!;
+
+            // choose random breed from list
+            breed = breeds[rnd.Next(breeds.Length)];
+            // choose random colour from list
+            colour = colours[rnd.Next(colours.Count)];
+            // choose random sex
+            sex = sexs[rnd.Next(sexs.Length)];
+
+            // choose random age
+            age = rnd.Next(0, 10);
+            // check if its a kitten
+            if (age == 0)
+            {
+                // custom stats
+                weight = rnd.NextDouble() * 1 + 1;
+                height = rnd.NextDouble() * 5 + 2;
+                length = rnd.NextDouble() * 6 + 3;
+                speed = Math.Abs((height * length * 0.05) - weight);
+            }
+            else
+            {
+                // custom stats
+                weight = rnd.NextDouble() * 3 + 2;
+                height = rnd.NextDouble() * 6 + 23;
+                length = rnd.NextDouble() * 10 + 40;
+                speed = (height * length * 0.05) - weight;
+            }
+        }
 
         /// <summary> 
         /// The class contructor 
@@ -71,7 +127,7 @@ namespace Data_Structures.classes
             this.sex = sex;
             weight = 4.5;
             height = 24.00;
-            speed = 48.00;
+            speed = (height * length * 0.05) - weight;
             length = 46;
             age = 3;
         }
@@ -98,7 +154,7 @@ namespace Data_Structures.classes
             this.sex = sex;
             this.weight = weight;
             this.height = height;
-            this.speed = speed;
+            this.speed = (height * length * 0.05) - weight;
             this.length = length;
             this.age = age;
         }

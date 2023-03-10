@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\Data-Structures.csproj": {}
+    "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-answers\\data-structures\\Data-Structures.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\Data-Structures.csproj": {
+    "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-answers\\data-structures\\Data-Structures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\Data-Structures.csproj",
+        "projectUniqueName": "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-answers\\data-structures\\Data-Structures.csproj",
         "projectName": "Data-Structures",
-        "projectPath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\Data-Structures.csproj",
-        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Data-Structures\\obj\\",
+        "projectPath": "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-answers\\data-structures\\Data-Structures.csproj",
+        "packagesPath": "C:\\Users\\linli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-answers\\data-structures\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\linli\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

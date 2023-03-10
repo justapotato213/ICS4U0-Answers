@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Data_Structures.classes
 {
@@ -10,7 +11,7 @@ namespace Data_Structures.classes
         /// <summary>
         /// The name of the food as a string
         /// </summary>
-        public string name { get; set; }
+        public required string name { get; set; }
 
         /// <summary>
         /// Caloric value of the food as a double
@@ -27,6 +28,7 @@ namespace Data_Structures.classes
         /// </summary>
         public double fat { get; set; }
 
+        /*
         /// <summary>
         /// Class constructor
         /// </summary>
@@ -34,13 +36,14 @@ namespace Data_Structures.classes
         /// <param name="nutrients">Nutritional  value of food</param>
         /// <param name="fat">Fat value of the food</param>
         /// <param name="name">Name of the food</param>
-        public Food(string name,  int caloricValue, int nutrients, int fat)
+        public Food(string name, int caloricValue, int nutrients, int fat)
         {
             this.name = name;
             this.caloricValue = caloricValue;
             this.nutrients = nutrients;
             this.fat = fat;
         }
+        */
 
         /// <summary>
         /// Increases the weight based on the food values
