@@ -8,6 +8,10 @@ namespace Data_Structures.classes;
 /// </summary>
 public class Helper
 {
+    /// <summary>
+    /// Given a list of options, the user will choose an option. 
+    /// </summary> 
+    /// <returns>Which option the user returned, as an int.</returns>
     public int UserOptionsList(List<string> optionsList)
     {
         // display the options

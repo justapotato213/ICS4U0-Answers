@@ -67,7 +67,7 @@ namespace Data_Structures.classes
                 "Siamese", "British Shorthair", "Maine Coon", "Persian", "Ragdoll", "American Shorthair",
                 "Scottish Fold"
             };
-            string[] sexs = {"Male", "Female"};
+            string[] sexs = { "Male", "Female" };
 
             List<Colour> colours = new List<Colour>();
             // load colour information from file

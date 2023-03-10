@@ -20,11 +20,7 @@ namespace Data_Structures
             List<Cat> cats = new List<Cat>();
             List<Food> foods = new List<Food>();
 
-
-            List<string> catNames = new List<string>
-                { "Luna", "Nala", "Oliver", "Leo", "Simba", "Milo", "Tigger", "Max", "Lola" };
-            List<string> peopleNames = new List<string>
-                { "John", "William", "James", "Charles", "Robert", "Henry", "Karely", "Catalina", "Devin", "Sydney" };
+            // all available options
             List<string> dailyOptions = new List<string>
             {
                 "Go to work.", "Play with your cat(s).", "Feed your cats.", "Go on a run with your cats.",
@@ -81,9 +77,8 @@ namespace Data_Structures
             }
 
             // User chooses a cat
+            Console.WriteLine("===================================");
             Console.WriteLine($"Now lets get you a cat, {name}");
-            Console.WriteLine("Here are your choices:");
-
             // get user to choose a cat
             Console.WriteLine("Which cat do you want?");
 
@@ -111,12 +106,15 @@ namespace Data_Structures
                 switch (option)
                 {
                     case 1:
+                        // adds money
                         player.money += 100;
-                        Console.WriteLine("You earnt a hundred dollars!");
+                        Console.WriteLine("You earnt a hundred dollars from working!");
+                        // add 1 day 
                         days++;
                         break;
                     case 2:
                         Console.WriteLine("You played with your cats! They all enjoyed it but as you left, they went back to lounging in the sun.");
+                        // add 1 day
                         days++;
                         break;
                     case 3:
@@ -137,6 +135,7 @@ namespace Data_Structures
                             // feed each cat the food
                             cat.Eat(foods[selection - 1]);
                         }
+                        // add 1 day
                         days++;
                         break;
                     case 4:
@@ -156,13 +155,14 @@ namespace Data_Structures
                         {
                             Console.WriteLine("The cat runs away.");
                         }
-                        // addd one day
+                        // add 1 day
                         days++;
                         break;
                     case 5:
                         Console.WriteLine("Here are all your cats:");
                         // loop through players cats, and get them to print the description
-                        foreach (Cat cat in player.cats){
+                        foreach (Cat cat in player.cats)
+                        {
                             Console.WriteLine(cat.Description());
                         }
                         break;
@@ -171,7 +171,8 @@ namespace Data_Structures
                         exit = true;
                         // save all cats 
                         directory = @".\data\cats";
-                        foreach (Cat cat in player.cats){
+                        foreach (Cat cat in player.cats)
+                        {
                             cat.SaveCat();
                         }
                         break;
