@@ -1,0 +1,15 @@
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\bin\Release\net7.0\Data-Structures.exe
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\bin\Release\net7.0\Data-Structures.deps.json
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\bin\Release\net7.0\Data-Structures.runtimeconfig.json
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\bin\Release\net7.0\Data-Structures.dll
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\bin\Release\net7.0\Data-Structures.pdb
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\Data-Structures.csproj.AssemblyReference.cache
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\Data-Structures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\Data-Structures.AssemblyInfoInputs.cache
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\Data-Structures.AssemblyInfo.cs
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\Data-Structures.csproj.CoreCompileInputs.cache
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\Data-Structures.dll
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\refint\Data-Structures.dll
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\Data-Structures.pdb
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\Data-Structures.genruntimeconfig.cache
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Data-Structures\obj\Release\net7.0\ref\Data-Structures.dll
