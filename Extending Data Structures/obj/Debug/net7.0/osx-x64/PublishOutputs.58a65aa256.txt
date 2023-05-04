@@ -1,0 +1,5 @@
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Extending Data Structures\bin\Debug\net7.0\osx-x64\publish\Data-Structures
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Extending Data Structures\bin\Debug\net7.0\osx-x64\publish\Data-Structures.dll
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Extending Data Structures\bin\Debug\net7.0\osx-x64\publish\Data-Structures.deps.json
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Extending Data Structures\bin\Debug\net7.0\osx-x64\publish\Data-Structures.runtimeconfig.json
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Extending Data Structures\bin\Debug\net7.0\osx-x64\publish\Data-Structures.pdb

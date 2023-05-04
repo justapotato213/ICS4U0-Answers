@@ -1,8 +1,8 @@
 ﻿/*
 Author: Tony L
 Date Created: March 3rd 2023
-Last Updated: May 5th 2023    
-Purpose: To learn more about extending data structures with inheritance, by using an example of a pet owner simulator, featuring cats and ogs, and various activities each the user can do.
+Last Updated: May 4th 2023    
+Purpose: To learn more about extending data structures with inheritance, by using an example of a pet owner simulator, featuring cats and dogs, and various activities each the user can do.
 */
 
 using System.Text.Json;
@@ -136,7 +136,6 @@ internal class MainClass
                     var dog = animals[selection - 1] as Dog;
                     player = new Person(name!, new List<Cat>(), new List<Dog> { dog }, 0);
                 }
-
 
                 break;
         }
