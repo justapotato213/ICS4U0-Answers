@@ -1,4 +1,7 @@
 ﻿/*
+Name: Data Structures Project
+Purpose: A small project / game which demonstrates the usage of data structure such as classes.
+
 Author: Tony L
 Date Created: March 3rd 2023
 Last Updated: April 4th 2023    
