@@ -1,0 +1,17 @@
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.exe
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.deps.json
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.runtimeconfig.json
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.dll
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.pdb
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.csproj.AssemblyReference.cache
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.AssemblyInfoInputs.cache
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.AssemblyInfo.cs
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.dll
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\refint\Algorithms.dll
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.pdb
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.genruntimeconfig.cache
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\ref\Algorithms.dll
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\CsvHelper.dll
+C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.csproj.CopyComplete

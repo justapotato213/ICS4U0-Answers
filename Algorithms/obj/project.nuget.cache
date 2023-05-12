@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "KmQG6HXEO9PLr9OkGewcwtRS8FIwAJ+7cCzyceW/o/SpN2d5wLsOD4mLUerqQepWt2xS4K+nKyz4Yen2h0ke6Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tony\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
