@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Data_Structures.classes.Cat">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgQAAAAIEAAgQAQAAEQAAAAAAAAEAQAgIAAAAAAAAAI=</HashCode>
+      <FileName>classes\Cat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data_Structures.classes.Colour">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAgAAAAAAAAABAAAAAAEAAAIIAAAAAAAAA=</HashCode>
+      <FileName>classes\Colour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data_Structures.classes.Food">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAGAAAAAAgAAAAABAQAAACAAAABEAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>classes\Food.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data_Structures.classes.Person">
+    <Position X="13.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAgAAAAAAAAAAAAAEAAAAIAAAAAAAEBA=</HashCode>
+      <FileName>classes\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
