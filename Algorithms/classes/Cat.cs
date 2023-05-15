@@ -24,14 +24,14 @@ public class Cat
         };
         string[] sexs = { "Male", "Female" };
 
-        
+
 
         this.name = name;
 
         // choose random breed from list
         breed = breeds[rnd.Next(breeds.Length)];
         // choose random colour from list
-        this.colour = colour;
+        // this.colour = colour;
         // choose random sex
         sex = sexs[rnd.Next(sexs.Length)];
 
@@ -60,9 +60,10 @@ public class Cat
             // check if its a negative number, if it is set it to 1km/h
             if (speed <= 0) speed = 1;
         }
-        
+
         // calculate the volume
         volume = length * width * height;
+        this.colour = colour;
     }
 
     /// <summary>
@@ -128,7 +129,7 @@ public class Cat
     public string Description()
     {
         return
-            $"{name} is a {breed} cat, who is {age} years old. They can run at {Math.Round(speed)}km/h, weighs {Math.Round(weight)}kg, is {Math.Round(length)}cm long and is {Math.Round(height)}cm tall. They have {colour.Description()} fur.";
+            $"{name} is a {breed} cat, who is {age} years old. They can run at {Math.Round(speed)}km/h, weighs {Math.Round(weight)}kg, is {Math.Round(length)}cm long and is {Math.Round(height)}cm tall. .";
     }
 
     /// <summary>

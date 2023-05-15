@@ -15,3 +15,20 @@ C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\D
 C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\ref\Algorithms.dll
 C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\CsvHelper.dll
 C:\Users\Tony\Documents\School\Programming\Gr 12\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.csproj.CopyComplete
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.exe
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.deps.json
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.runtimeconfig.json
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.dll
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\Algorithms.pdb
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\bin\Debug\net7.0\CsvHelper.dll
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.csproj.AssemblyReference.cache
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.AssemblyInfoInputs.cache
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.AssemblyInfo.cs
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.csproj.CoreCompileInputs.cache
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.csproj.CopyComplete
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.dll
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\refint\Algorithms.dll
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.pdb
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\Algorithms.genruntimeconfig.cache
+C:\Users\linli\Desktop\School\ICS4U\ICS4U0-Answers\Algorithms\obj\Debug\net7.0\ref\Algorithms.dll

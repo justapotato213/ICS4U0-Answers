@@ -10,127 +10,129 @@ class MainClass
 {
     static void Main()
     {
-        Thread five = new Thread(() => SortAndSearch(5));
-        five.Start();
+        int[] numsOfObjects = { 5, 10, 100, 1000, 10000, 30000, 50000, 75000};
 
-        Thread ten = new Thread(() => SortAndSearch(10));
-        ten.Start();
-        
-        Thread hundred = new Thread(()=> SortAndSearch(100));
-        hundred.Start();
+        int trials = 15;
 
-        Thread thousand = new Thread(() => SortAndSearch(1000));
-        thousand.Start();
+        var tasks = new List<Task>();
 
-        Thread tenThousand = new Thread(() => SortAndSearch(10000));
-        tenThousand.Start();
+        foreach (var numOfObject in numsOfObjects)
+        {
+            for (int i = 0; i < trials; i++)
+            {
+                var task = Task.Run((() => SortAndSearch(numOfObject)));
+                tasks.Add(task);
+            }
+        }
 
-        Thread thirtyThousand = new Thread(() => SortAndSearch(30000));
-        thirtyThousand.Start();
-
-        Thread fiftyThousand = new Thread(() => SortAndSearch(50000));
-        fiftyThousand.Start();
-
-        Thread seventyThousand = new Thread(() => SortAndSearch(75000));
-        seventyThousand.Start();
+        Task.WaitAll(tasks.ToArray());
     }
 
     static void SortAndSearch(int numOfCats)
     {
-        for (int x = 0; x < 10; x++)
+        // timing
+        var watch = new Stopwatch();
+        // random
+        var rnd = new Random();
+
+        // load name info
+        var namesJson = File.ReadAllText($@".\data\names.json");
+        
+        // load name info from file
+        var names = JsonSerializer.Deserialize<List<String>>(namesJson);
+
+        // time
+        List<decimal> nanoTimes = new List<decimal>();
+
+       
+        var colours = new List<Colour>();
+        // load colour information from file
+        foreach (var file in Directory.GetFiles(@".\data\colours"))
         {
-            // timing
-            var watch = new Stopwatch();
-            // random
-            var rnd = new Random();
-            // load name info
-            var namesJson = File.ReadAllText($@".\data\names.json");
-            // load name info from file
-            var names = JsonSerializer.Deserialize<List<String>>(namesJson);
-            // time
-            List<long> nanoTimes = new List<long>();
+            // load json from file
+            var jsonString = File.ReadAllText(@$".\{file}");
+            // convert to class, and then save to colours list
+            colours.Add(JsonSerializer.Deserialize<Colour>(jsonString)!);
+        }
 
-            var colours = new List<Colour>();
-            // load colour information from file
-            foreach (var file in Directory.GetFiles(@".\data\colours"))
-            {
-                // load json from file
-                var jsonString = File.ReadAllText(@$".\{file}");
-                // convert to class, and then save to colours list
-                colours.Add(JsonSerializer.Deserialize<Colour>(jsonString)!);
-            }
+        // generate a number cats with random stats
+        List<Cat> cats = new List<Cat>();
 
-            // generate a number cats with random stats
-            List<Cat> cats = new List<Cat>();
+        for (int i = 0; i < numOfCats; i++)
+        {
+            var name = names[rnd.Next(0, names.Count)];
+            var colour = colours[rnd.Next(0, colours.Count)];
+            cats.Add(new Cat(name, colour));
+        }
 
-            for (int i = 0; i < numOfCats; i++)
-            {
-                var name = names[rnd.Next(0, names.Count)];
-                var colour = colours[rnd.Next(0, colours.Count)];
-                cats.Add(new Cat(name, colour));
-            }
+        // LINEAR SEARCH UNSORTED
+        // choose a random volume to look for 
+        int rndIndex = rnd.Next(0, cats.Count);
+        watch.Start();
+        LinearSearch(cats[rndIndex].volume, cats);
+        watch.Stop();
+        // find the time in milliseconds
+        decimal nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
+        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        watch.Reset();
 
-            // INSERTION SORT
-            watch.Start();
-            cats = InsertionSort(cats);
-            watch.Stop();
-            // find the time in nanoseconds
-            long nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-            nanoTimes.Add(watch.ElapsedTicks * nanosecPerTick);
-            watch.Reset();
-            
-            
-            // KNOWN BINARY SEARCH
-            // choose a random volume to look for 
-            int rndIndex = rnd.Next(0, cats.Count);
-            watch.Start();
-            BinarySearch(cats[rndIndex].volume, cats);
-            watch.Stop();
+        // INSERTION SORT
+        watch.Start();
+        InsertionSort(cats);
+        watch.Stop();
+        // find the time in milliseconds
+        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
+        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        watch.Reset();
+        
+        // DEFAULT SORT
+        watch.Start();
+        cats.Sort((x, y) => x.volume.CompareTo(y.volume));
+        watch.Stop();
+        // find the time in milliseconds
+        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
+        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        watch.Reset();
 
-            // find the time in nanoseconds
-            nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-            nanoTimes.Add(watch.ElapsedTicks * nanosecPerTick);
-            watch.Reset();
-            
-            
-            // UNKNOWN BINARY SEARCH
-            watch.Start();
-            BinarySearch(20000000000000000000000000d, cats);
-            watch.Stop();
-            
-            // find the time in nanoseconds
-            nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-            nanoTimes.Add(watch.ElapsedTicks * nanosecPerTick);
-            watch.Reset();
-            
-            
-            // KNOWN LINEAR SEARCH 
-            watch.Start();
-            LinearSearch(cats[rndIndex].volume, cats);
-            watch.Stop();
-            
-            // find the time in nanoseconds
-            nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-            nanoTimes.Add(watch.ElapsedTicks * nanosecPerTick);
-            watch.Reset();
-            
+        // KNOWN BINARY SEARCH
+        watch.Start();
+        BinarySearch(cats[rndIndex].volume, cats);
+        watch.Stop();
+        // find the time in milliseconds
+        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
+        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        watch.Reset();
 
-            // UNKNOWN LINEAR SEARCH
-            watch.Start();
-            LinearSearch(9999999999999999999999999999999999d, cats);
-            watch.Stop();
-            
-            // find the time in nanoseconds
-            nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-            nanoTimes.Add(watch.ElapsedTicks * nanosecPerTick);
-            watch.Reset();
+        // UNKNOWN BINARY SEARCH
+        watch.Start();
+        BinarySearch(20000000000000000000000000d, cats);
+        watch.Stop();
+        // find the time in milliseconds
+        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
+        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        watch.Reset();
 
+        // KNOWN LINEAR SEARCH 
+        watch.Start();
+        LinearSearch(cats[rndIndex].volume, cats);
+        watch.Stop();
+        // find the time in milliseconds
+        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
+        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        watch.Reset();
 
-
-            using (StreamWriter outputFile = File.AppendText($@".\{numOfCats}.txt"))
-            {
-                outputFile.WriteLine(string.Join(",", nanoTimes));
-            }
+        // UNKNOWN LINEAR SEARCH
+        watch.Start();
+        LinearSearch(9999999999999999999999999999999999d, cats);
+        watch.Stop();
+        // find the time in milliseconds
+        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
+        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        watch.Reset();
+        
+        using (StreamWriter outputFile = File.AppendText($@".\{numOfCats}.txt"))
+        {
+            outputFile.WriteLine(string.Join(",", nanoTimes));
         }
     }
 
