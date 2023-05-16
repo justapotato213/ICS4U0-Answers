@@ -3,6 +3,7 @@
 namespace Algorithms;
 
 using Algorithms.classes;
+using System.Collections;
 using System.Text.Json;
 using System.Threading;
 
@@ -10,41 +11,16 @@ class MainClass
 {
     static void Main()
     {
-        int[] numsOfObjects = { 5, 10, 100, 1000, 10000, 30000, 50000, 75000};
-
-        int trials = 15;
-
-        var tasks = new List<Task>();
-
-        foreach (var numOfObject in numsOfObjects)
-        {
-            for (int i = 0; i < trials; i++)
-            {
-                var task = Task.Run((() => SortAndSearch(numOfObject)));
-                tasks.Add(task);
-            }
-        }
-
-        Task.WaitAll(tasks.ToArray());
-    }
-
-    static void SortAndSearch(int numOfCats)
-    {
-        // timing
-        var watch = new Stopwatch();
-        // random
-        var rnd = new Random();
-
+        // overall setup
+        
         // load name info
         var namesJson = File.ReadAllText($@".\data\names.json");
         
         // load name info from file
-        var names = JsonSerializer.Deserialize<List<String>>(namesJson);
-
-        // time
-        List<decimal> nanoTimes = new List<decimal>();
-
-       
+        var names = JsonSerializer.Deserialize<List<String>>(namesJson)!;
+        
+        int[] numsOfObjects = { 5, 10, 100, 1000, 10000, 30000, 50000, 75000};
+        
         var colours = new List<Colour>();
         // load colour information from file
         foreach (var file in Directory.GetFiles(@".\data\colours"))
@@ -54,6 +30,50 @@ class MainClass
             // convert to class, and then save to colours list
             colours.Add(JsonSerializer.Deserialize<Colour>(jsonString)!);
         }
+
+        int trials = 10;
+
+        var tasks = new List<Task<string[]>>();
+        var results = new List<string[]>();
+
+        foreach (var numOfObject in numsOfObjects)
+        {
+            for (int i = 0; i < trials; i++)
+            {
+                var task = Task.Run(() => SortAndSearch(numOfObject, ref names, ref colours));
+
+                tasks.Add(task);
+            }
+        }
+        Task.WaitAll(tasks.ToArray());
+
+
+        foreach (var task in tasks)
+        {
+            results.Add(task.Result);
+        }
+
+        // write all results into file
+        
+        foreach (var result in results)
+        {
+            using (StreamWriter outputFile = File.AppendText($@".\{result[0]}.txt"))
+            {
+                outputFile.WriteLine(result[1]);
+            }
+        }
+
+
+    }
+
+    static string[] SortAndSearch(int numOfCats, ref List<string> names, ref List<Colour> colours)
+    {
+
+        // random
+        var rnd = new Random();
+
+        // time
+        List<decimal> nanoTimes = new List<decimal>();
 
         // generate a number cats with random stats
         List<Cat> cats = new List<Cat>();
@@ -65,14 +85,26 @@ class MainClass
             cats.Add(new Cat(name, colour));
         }
 
-        // LINEAR SEARCH UNSORTED
+        // LINEAR SEARCH UNSORTED IN ARRAY
         // choose a random volume to look for 
         int rndIndex = rnd.Next(0, cats.Count);
+        // timing
+        var watch = new Stopwatch();
         watch.Start();
         LinearSearch(cats[rndIndex].volume, cats);
         watch.Stop();
         // find the time in milliseconds
         decimal nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
+        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        watch.Reset();
+
+        // LINEAR SEARCH
+        // choose a random volume to look for 
+        watch.Start();
+        LinearSearch(999999999999999999999999999999999999999999d, cats);
+        watch.Stop();
+        // find the time in milliseconds
+        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
         nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
 
@@ -129,11 +161,13 @@ class MainClass
         nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
         nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
+
+        string splitTimes = String.Join(",", nanoTimes);
+
+        string[] returnValue = { numOfCats.ToString(), splitTimes };
+
+        return returnValue;
         
-        using (StreamWriter outputFile = File.AppendText($@".\{numOfCats}.txt"))
-        {
-            outputFile.WriteLine(string.Join(",", nanoTimes));
-        }
     }
 
     static List<Cat> InsertionSort(List<Cat> cats)
