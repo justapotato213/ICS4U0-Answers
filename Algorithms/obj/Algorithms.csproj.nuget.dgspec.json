@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj": {}
+    "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj": {}
   },
   "projects": {
-    "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj": {
+    "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj",
+        "projectUniqueName": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj",
         "projectName": "Algorithms",
-        "projectPath": "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj",
-        "packagesPath": "C:\\Users\\linli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\linli\\Desktop\\School\\ICS4U\\ICS4U0-Answers\\Algorithms\\obj\\",
+        "projectPath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Algorithms\\Algorithms.csproj",
+        "packagesPath": "C:\\Users\\Tony\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tony\\Documents\\School\\Programming\\Gr 12\\ICS4U0-Answers\\Algorithms\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\linli\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Tony\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -66,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

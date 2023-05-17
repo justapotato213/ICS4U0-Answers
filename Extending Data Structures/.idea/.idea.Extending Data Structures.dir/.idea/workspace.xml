@@ -4,7 +4,7 @@
     <projectFile>Data-Structures.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78db931b-6cfa-44c9-bd9e-419c0f34a018" name="Changes" comment="" />
+    <list default="true" id="d0bfbc92-c790-459f-9165-1ed4d36bfca8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,9 +16,6 @@
         <entry key="$PROJECT_DIR$/.." value="data-structures" />
       </map>
     </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/obj/Debug/net7.0/osx-x64/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

@@ -19,6 +19,7 @@ class MainClass
         // load name info from file
         var names = JsonSerializer.Deserialize<List<String>>(namesJson)!;
         
+        // number of objects to put into list
         int[] numsOfObjects = { 5, 10, 100, 1000, 10000, 30000, 50000, 75000};
         
         var colours = new List<Colour>();
@@ -30,62 +31,75 @@ class MainClass
             // convert to class, and then save to colours list
             colours.Add(JsonSerializer.Deserialize<Colour>(jsonString)!);
         }
-
+        
+        // number of times to repeat
         int trials = 10;
-
+        
+        // list that stores the tasks for the threadpool to complete
         var tasks = new List<Task<string[]>>();
+        // list that stores the results from the threadpool
         var results = new List<string[]>();
-
+        
         foreach (var numOfObject in numsOfObjects)
         {
+            // repeat benchmarks x times
             for (int i = 0; i < trials; i++)
             {
-                var task = Task.Run(() => SortAndSearch(numOfObject, ref names, ref colours));
-
+                // add task to threadpool to complete
+                var task = Task.Run(() => Benchmarks(numOfObject, ref names, ref colours));
                 tasks.Add(task);
             }
         }
+        // wait for all of them to complete
         Task.WaitAll(tasks.ToArray());
 
-
+        // add the results to results array
         foreach (var task in tasks)
         {
             results.Add(task.Result);
         }
 
         // write all results into file
-        
         foreach (var result in results)
         {
+            // result is stored like this
+            // [numOfObjects, [results]]
             using (StreamWriter outputFile = File.AppendText($@".\{result[0]}.txt"))
             {
                 outputFile.WriteLine(result[1]);
             }
         }
-
-
     }
 
-    static string[] SortAndSearch(int numOfCats, ref List<string> names, ref List<Colour> colours)
+    /// <summary>
+    /// Benchmarks algorithms against an array, and returns the results. 
+    /// </summary>
+    /// <param name="numOfCats">How many objects will be generated into a list.</param>
+    /// <param name="names">A list of names as a string.</param>
+    /// <param name="colours">A list of colours, as the Colour class.</param>
+    /// <returns></returns>
+    static string[] Benchmarks(int numOfCats, ref List<string> names, ref List<Colour> colours)
     {
-
         // random
         var rnd = new Random();
 
         // time
-        List<decimal> nanoTimes = new List<decimal>();
+        List<decimal> milliTimes = new List<decimal>();
 
         // generate a number cats with random stats
         List<Cat> cats = new List<Cat>();
 
         for (int i = 0; i < numOfCats; i++)
         {
+            // choose a random name
             var name = names[rnd.Next(0, names.Count)];
+            // choose a random colour
             var colour = colours[rnd.Next(0, colours.Count)];
+            // add to main array
             cats.Add(new Cat(name, colour));
         }
 
-        // LINEAR SEARCH UNSORTED IN ARRAY
+        // UNSORTED KNOWN LINEAR SEARCH 
         // choose a random volume to look for 
         int rndIndex = rnd.Next(0, cats.Count);
         // timing
@@ -95,82 +109,82 @@ class MainClass
         watch.Stop();
         // find the time in milliseconds
         decimal nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        // add the time in milliseconds to the list
+        milliTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
 
-        // LINEAR SEARCH
+        // UNSORTED UNKNOWN LINEAR SEARCH 
         // choose a random volume to look for 
         watch.Start();
         LinearSearch(999999999999999999999999999999999999999999d, cats);
         watch.Stop();
-        // find the time in milliseconds
-        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        // add the time in milliseconds to the list
+        milliTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
 
         // INSERTION SORT
         watch.Start();
         InsertionSort(cats);
         watch.Stop();
-        // find the time in milliseconds
-        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        // add the time in milliseconds to the list
+        milliTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
         
         // DEFAULT SORT
         watch.Start();
         cats.Sort((x, y) => x.volume.CompareTo(y.volume));
         watch.Stop();
-        // find the time in milliseconds
-        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        // add the time in milliseconds to the list
+        milliTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
 
         // KNOWN BINARY SEARCH
         watch.Start();
         BinarySearch(cats[rndIndex].volume, cats);
         watch.Stop();
-        // find the time in milliseconds
-        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        // add the time in milliseconds to the list
+        milliTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
 
         // UNKNOWN BINARY SEARCH
         watch.Start();
         BinarySearch(20000000000000000000000000d, cats);
         watch.Stop();
-        // find the time in milliseconds
-        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        // add the time in milliseconds to the list
+        milliTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
 
         // KNOWN LINEAR SEARCH 
         watch.Start();
         LinearSearch(cats[rndIndex].volume, cats);
         watch.Stop();
-        // find the time in milliseconds
-        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        // add the time in milliseconds to the list
+        milliTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
 
         // UNKNOWN LINEAR SEARCH
         watch.Start();
         LinearSearch(9999999999999999999999999999999999d, cats);
         watch.Stop();
-        // find the time in milliseconds
-        nanosecPerTick = (1000L * 1000L * 1000L) / Stopwatch.Frequency;
-        nanoTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
+        // add the time in milliseconds to the list
+        milliTimes.Add((watch.ElapsedTicks * nanosecPerTick) / 1000000m);
         watch.Reset();
-
-        string splitTimes = String.Join(",", nanoTimes);
-
+        
+        // seperate all times in milliTimes by a comma
+        string splitTimes = String.Join(",", milliTimes);
+        
+        // generates the array to return
         string[] returnValue = { numOfCats.ToString(), splitTimes };
 
         return returnValue;
-        
     }
 
-    static List<Cat> InsertionSort(List<Cat> cats)
+    /// <summary>
+    /// Sorts a list of cats by volume using insertion sort.
+    /// </summary>
+    /// <param name="cats">List of cats to sort.</param>
+    /// <returns>Sorted list of cats.</returns>
+    private static List<Cat> InsertionSort(List<Cat> cats)
     {
         for (int i = 0; i < cats.Count; i++)
         {
@@ -194,12 +208,12 @@ class MainClass
     }
 
     /// <summary>
-    /// Binary search algorithm
+    /// Searches for a specific volume within a list of Cat objects, using binary search.
     /// </summary>
-    /// <param name="vol">Item to look for</param>
-    /// <param name="cats">Array to look in</param>
-    /// <returns>Index of the item</returns>
-    static int BinarySearch(double vol, List<Cat> cats)
+    /// <param name="vol">Volume to look for.</param>
+    /// <param name="cats">List of cats to look in.</param>
+    /// <returns>Index of the cat with the specific volume. Returns -1, if not found</returns>
+    private static int BinarySearch(double vol, List<Cat> cats)
     {
         int start = 0;
         int end = cats.Count - 1;
@@ -228,14 +242,14 @@ class MainClass
     }
 
     /// <summary>
-    /// Searches for a volume within a list of cats, linearly
+    /// Searches for a specific volume within a list of cats, using linear search
     /// </summary>
-    /// <param name="vol"></param>
-    /// <param name="cats"></param>
-    /// <returns>The index of the cat that has the volume</returns>
-    static int LinearSearch(double vol, List<Cat> cats)
+    /// <param name="vol">Volume to look for. </param>
+    /// <param name="cats">List of cats to look in.</param>
+    /// <returns>Index of the cat with the specific volume. Returns -1, if not found</returns>
+    private static int LinearSearch(double vol, List<Cat> cats)
     {
-        // LINEAR SEARCH
+        // linear search
         for (int i = 0; i < cats.Count; i++)
         {
             if (cats[i].volume == vol)
